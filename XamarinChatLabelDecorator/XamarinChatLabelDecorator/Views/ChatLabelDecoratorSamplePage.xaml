@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:viewmodel="clr-namespace:XamarinChatLabelDecorator.ViewModel" 
+             xmlns:xamchatlabeldecorator="clr-namespace:XamChatLabelDecorator;assembly=Plugin.XamChatLabelDecoratorConverter"
+             mc:Ignorable="d"
+             x:Class="XamarinChatLabelDecorator.Views.ChatLabelDecoratorSample">
+    <ContentPage.Resources>
+        <xamchatlabeldecorator:ChatLabelDecoratorConverter x:Key="ChatLabelDecoratorConverter"/>
+    </ContentPage.Resources>
+    <!--xmlns:xamchatlabeldecorator="clr-namespace:XamChatLabelDecorator;assembly=Plugin.XamChatLabelDecoratorConverter"-->
+
+    <ContentPage.BindingContext>
+        <viewmodel:ChatLabelDecoratorViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Xamarin Forms Label Decorator Converter"
+                   FontSize="Large" Margin="5,10"/>
+            <Label FormattedText="{Binding SampleText, Converter={StaticResource ChatLabelDecoratorConverter}}"
+                   Margin="5"
+                   FontSize="Medium"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

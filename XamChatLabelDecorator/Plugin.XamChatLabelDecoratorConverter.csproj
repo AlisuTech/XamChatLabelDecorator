@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Authors>AlisuTech</Authors>
+    <Description>Xamarin Label Decorator is a  converter that helps users to create extra flexibility to the way a label is displayed on a xamarin forms application.</Description>
+    <Copyright>AlisuTech 2020</Copyright>
+    <PackageProjectUrl>https://github.com/AlisuTech/Plugin.XamChatLabelDecoratorConverter</PackageProjectUrl>
+    <PackageIcon>alisutech.png</PackageIcon>
+    <RepositoryUrl>https://github.com/AlisuTechPlugin.XamChatLabelDecoratorConverter</RepositoryUrl>
+    <RepositoryType>public</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.3</Version>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="alisutech.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

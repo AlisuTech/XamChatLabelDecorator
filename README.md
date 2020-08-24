@@ -4,11 +4,45 @@ Xamarin Chat Label Decorator
 # Nugget
  [Plugin.XamChatLabelDecoratorConverter](https://www.nuget.org/packages/Plugin.XamChatLabelDecoratorConverter/1.0.3)
 
-<img src="./image.png">
+# Xaml
+ <ContentPage.Resources>
+        <xamchatlabeldecorator:ChatLabelDecoratorConverter x:Key="ChatLabelDecoratorConverter"/>
+    </ContentPage.Resources>
+    <!--xmlns:xamchatlabeldecorator="clr-namespace:XamChatLabelDecorator;assembly=Plugin.XamChatLabelDecoratorConverter"-->
 
+    <ContentPage.BindingContext>
+        <viewmodel:ChatLabelDecoratorViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Xamarin Forms Label Decorator Converter"
+                   FontSize="Large" Margin="5,10"/>
+            <Label FormattedText="{Binding SampleText, Converter={StaticResource ChatLabelDecoratorConverter}}"
+                   Margin="5"
+                   FontSize="Medium"/>
+        </StackLayout>
+    </ContentPage.Content>
+    
+  # C#-ViewModel
+   public class ChatLabelDecoratorViewModel:BaseViewModel
+    {
+		public ChatLabelDecoratorViewModel()
+		{
+			SampleText = GetSampleDecoratorText();
+		}
 
-# Sample Text
-string sampletext = "Hello there this is a sample of how to use \*XamChatLabelDecorator\* to decorate a \_chat label or an article\_ comprising of different formatting without having to create multiple label spans.\n \*Bold Text\* \n \*\_Italix Text\_\* \n \~Strikethrough\~ \n %%Red||Changing a colour to red%% \n /-Underline Sample-/ \n Loading http link https://github.com/AlisuTech/XamChatLabelDecorator  ##30||Changing Font Size## *XamChatLabelDecorator* also supports * adding new lines to your text \n\n\n Three lines were added. \n ##50||%%Red||Enjoy%%##"; <b>
+		private string GetSampleDecoratorText()
+		{
+			string sampletext = "Hello there this is a sample of how to use *XamChatLabelDecorator* to decorate a _chat label or an article_ comprising of different formatting without having to create multiple label spans.\n *Bold Text* \n *_Italix Text_* \n ~Strikethrough~ \n %%Red||Changing a colour to red%% \n /-Underline Sample-/ \n Loading http link https://github.com/AlisuTech/XamChatLabelDecorator  ##30||Changing Font Size## *XamChatLabelDecorator* also supports * adding new lines to your text \n\n\n Three lines were added. \n ##50||%%Red||Enjoy%%##";
+
+			return sampletext;
+		}
+
+		public string SampleText { get; set; }
+	}
+  
+# Decorator Notations
+
 \*?\* - Bold <br>
 \_?\_ - Italic <br>
 \~?\~ - Strikethrough <br>
@@ -19,3 +53,5 @@ string sampletext = "Hello there this is a sample of how to use \*XamChatLabelDe
 
 # Limitation
 The converter cannot nest a change of colour and fontsize change in the same span.
+
+<img src="./image.png">

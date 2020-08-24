@@ -8,8 +8,6 @@ Xamarin Chat Label Decorator
  <ContentPage.Resources>
         <xamchatlabeldecorator:ChatLabelDecoratorConverter x:Key="ChatLabelDecoratorConverter"/>
     </ContentPage.Resources>
-    <!--xmlns:xamchatlabeldecorator="clr-namespace:XamChatLabelDecorator;assembly=Plugin.XamChatLabelDecoratorConverter"-->
-
     <ContentPage.BindingContext>
         <viewmodel:ChatLabelDecoratorViewModel/>
     </ContentPage.BindingContext>

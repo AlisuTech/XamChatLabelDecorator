@@ -2,10 +2,10 @@
 Xamarin Chat Label Decorator
 
 # Nugget
- [Plugin.XamChatLabelDecoratorConverter](https://www.nuget.org/packages/Plugin.XamChatLabelDecoratorConverter/1.0.3)
+ [Plugin.XamChatLabelDecoratorConverter](https://www.nuget.org/packages/Plugin.XamChatLabelDecoratorConverter/1.0.4)
 
 # Xaml
- <ContentPage.Resources>
+    <ContentPage.Resources>
         <xamchatlabeldecorator:ChatLabelDecoratorConverter x:Key="ChatLabelDecoratorConverter"/>
     </ContentPage.Resources>
     <ContentPage.BindingContext>
